@@ -3,10 +3,7 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*",
-        "Grove": "github:seeed-studio/pxt-grove#v0.7.5"
+        "core": "*"
     },
     "files": [
         "README.md",
