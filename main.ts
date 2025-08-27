@@ -1,5 +1,4 @@
-//% weight=100 color=#0080ff icon="\uf1b2"
-namespace 拡張基板02 {
+namespace ExtBoard02 {
     
     /** 
      * LEDブロック
@@ -65,7 +64,7 @@ namespace 拡張基板02 {
     /**
      * 測距センサ
      */
-    //% blockId=Distance block="%pin | の角度センサの値(0-100) "
+    //% blockId=Distance block="%pin | の測距センサの値(0-100) "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="測距センサ" pin.defl=AnalogPin.P0

@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "b02": "github:techGifu/B02#f817bfdfa506295f941606289fb068a064fc295f"
     },
     "files": [
         "README.md",
