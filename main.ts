@@ -1,17 +1,6 @@
+//% weight=100 color=#0080ff icon="\uf1b2"
 namespace Board02 {
     
-    /**
-     * //% blockId=B02_Sensor
-     * //% block="人感センサが反応した"
-     * //% weight=80 blockGap=8
-     * export function IsDetected(): boolean {
-     *     if (pins.digitalReadPin(DigitalPin.P2) == 1)
-     *         return true;
-     *     return false;
-     * }
-     */
-
-
     /** 
      * LEDブロック
      */
