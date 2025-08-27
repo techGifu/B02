@@ -1,5 +1,5 @@
 //% weight=100 color=#0080ff icon="\uf1b2"
-namespace Board02 {
+namespace 拡張基板02 {
     
     /** 
      * LEDブロック
