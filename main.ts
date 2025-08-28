@@ -85,7 +85,7 @@ namespace ExtBoard02 {
 
     /**
      * 超音波センサ
-    */ 
+    
     let distanceBackup: number = 0;
     //% blockId=Ultrasonic block="%pin | の超音波センサ（cm）の値 "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
@@ -93,7 +93,7 @@ namespace ExtBoard02 {
     //% group="超音波センサ（HC-SR04など：4線式）" pin.defl=DigitalPin.P0
     export function ultrasonicSensor(pin: DigitalPin): number {
         let duration1 = 0;
-        let echoPin1 :DigitalPin = DigitalPin.P14;
+        let echoPin1: DigitalPin = DigitalPin.P14;
         let RangeInCentimeters = 0;
 
         pins.digitalWritePin(pin, 0);
@@ -101,7 +101,7 @@ namespace ExtBoard02 {
         pins.digitalWritePin(pin, 1);
         control.waitMicros(20);
         pins.digitalWritePin(pin, 0);
-        
+
         if (pin == DigitalPin.P0) echoPin1 = DigitalPin.P14;
         if (pin == DigitalPin.P1) echoPin1 = DigitalPin.P15;
         if (pin == DigitalPin.P2) echoPin1 = DigitalPin.P16;
@@ -113,7 +113,7 @@ namespace ExtBoard02 {
         basic.pause(50);
         return RangeInCentimeters;
     }
-    
+
     //% blockId=UltrasonicGrove block="%pin | の超音波センサ（cm）の値 "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
@@ -135,4 +135,6 @@ namespace ExtBoard02 {
         basic.pause(50);
         return RangeInCentimeters2;
     }
+
+    */
 }
