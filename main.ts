@@ -85,14 +85,15 @@ namespace ExtBoard02 {
 
     /**
      * 超音波センサ
-     */
+    */ 
     let distanceBackup: number = 0;
     //% blockId=Ultrasonic block="%pin | の超音波センサ（cm）の値 "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
-    //% group="超音波センサ" pin.defl=DigitalPin.P0
+    //% group="超音波センサ（HC-SR04など：4線式）" pin.defl=DigitalPin.P0
     export function ultrasonicSensor(pin: DigitalPin): number {
-        let duration = 0;
+        let duration1 = 0;
+        let echoPin1 :DigitalPin = DigitalPin.P14;
         let RangeInCentimeters = 0;
 
         pins.digitalWritePin(pin, 0);
@@ -100,11 +101,38 @@ namespace ExtBoard02 {
         pins.digitalWritePin(pin, 1);
         control.waitMicros(20);
         pins.digitalWritePin(pin, 0);
-        duration = pins.pulseIn(pin, PulseValue.High, 50000); // Max duration 50 ms
-        RangeInCentimeters = duration * 153 / 44 / 2 / 100;
+        
+        if (pin == DigitalPin.P0) echoPin1 = DigitalPin.P14;
+        if (pin == DigitalPin.P1) echoPin1 = DigitalPin.P15;
+        if (pin == DigitalPin.P2) echoPin1 = DigitalPin.P16;
+        duration1 = pins.pulseIn(echoPin1, PulseValue.High, 50000); // Max duration 50 ms
+
+        RangeInCentimeters = duration1 * 153 / 44 / 2 / 100;
         if (RangeInCentimeters > 0) distanceBackup = RangeInCentimeters;
         else RangeInCentimeters = distanceBackup;
         basic.pause(50);
         return RangeInCentimeters;
+    }
+    
+    //% blockId=Ultrasonic block="%pin | の超音波センサ（cm）の値 "
+    //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
+    //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
+    //% group="超音波センサ(Grove：3線式)" pin.defl=DigitalPin.P0
+    export function ultrasonicSensorGrove(pin: DigitalPin): number {
+        let duration2 = 0;
+        let echoPin2: DigitalPin = pin;
+        let RangeInCentimeters2 = 0;
+
+        pins.digitalWritePin(pin, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(pin, 1);
+        control.waitMicros(20);
+        pins.digitalWritePin(pin, 0);
+        duration2 = pins.pulseIn(echoPin2, PulseValue.High, 50000); // Max duration 50 ms
+        RangeInCentimeters2 = duration2 * 153 / 44 / 2 / 100;
+        if (RangeInCentimeters2 > 0) distanceBackup = RangeInCentimeters2;
+        else RangeInCentimeters2 = distanceBackup;
+        basic.pause(50);
+        return RangeInCentimeters2;
     }
 }
