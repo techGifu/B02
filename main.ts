@@ -114,7 +114,7 @@ namespace ExtBoard02 {
         return RangeInCentimeters;
     }
     
-    //% blockId=Ultrasonic block="%pin | の超音波センサ（cm）の値 "
+    //% blockId=UltrasonicGrove block="%pin | の超音波センサ（cm）の値 "
     //% pin.fieldEditor="gridpicker" pin.fieldOptions.columns=4
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="超音波センサ(Grove：3線式)" pin.defl=DigitalPin.P0
